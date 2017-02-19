@@ -1,0 +1,72 @@
+	header {
+		height: 500px;
+		background: white; 
+	}
+
+		header .profpict {
+			height: 400px;
+			width: 400px;
+			border-radius: 50%;
+			background: #888;
+			float: right;
+			margin-right: 120px; 
+		}
+
+		header h1 {
+			font-family: "Scope One";
+			font-weight: 100;
+			font-size: 60px;
+			background: white;
+			color: rgba(0, 0, 0, 0.8);
+			margin-left: 150px;
+			margin-top: 100px;
+			margin-bottom: 2px; 
+		}
+
+		header .navig {
+			margin-left: 135px;
+			margin-bottom: 50px;
+			display: inline-block; 
+		}
+
+			header .navig a {
+				margin-left: 15px;
+				color: rgba(0, 0, 0, 0.6);
+				font-weight: 700;
+				font-size: 14px;
+				font-family: "Scope One";
+				text-transform: uppercase; 
+			}
+	
+				header .navig a:hover {
+					color: black; 
+				}
+
+		header .desc {
+			margin-left: 150px;
+			margin-right: 600px;
+			font-family: "Scope One";
+			font-size: 20px; 
+		}
+
+		header .kicker {
+			margin-left: 150px;
+			margin-right: 600px;
+			font-family: "Source Sans Pro";
+			font-size: 14px; 
+		}
+		
+		header .icon {
+			margin-top: 10px;
+			margin-left: 110px;
+			display: inline-block; 
+			white-space: nowrap;
+		}
+
+			header .icon .twitter, .linkedin, .github, .mail, .rss {
+				margin-left: 40px;
+				border-radius: 50%;
+				height: 30px;
+				width: 30px;
+				background-color: rgba(0, 0, 0, 0.3);
+			}
