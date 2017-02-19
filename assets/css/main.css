@@ -66,3 +66,13 @@
 				width: 30px;
 				background-color: rgba(0, 0, 0, 0.3);
 			}
+
+	header ::selection {
+		background: #A4B0D0;
+		color: aliceblue;
+	}
+
+	header ::-moz-selection {
+		background: #A4B0D0;
+		color: aliceblue;
+	}
