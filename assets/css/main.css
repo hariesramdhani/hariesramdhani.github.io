@@ -54,25 +54,24 @@
 		
 		header .icon {
 			margin-top: 10px;
-			margin-left: 110px;
+			margin-left: 148px;
 			display: inline-block; 
 			white-space: nowrap;
 		}
 
-			header .icon .twitter, .linkedin, .github, .mail, .rss {
-				margin-left: 40px;
+			header .icon img{
+				margin-left: 2px;
 				border-radius: 50%;
 				height: 30px;
 				width: 30px;
-				background-color: rgba(0, 0, 0, 0.3);
 			}
 
 	header ::selection {
-		background: #A4B0D0;
+		background: rgb(161, 177, 202);
 		color: aliceblue;
 	}
 
 	header ::-moz-selection {
-		background: #A4B0D0;
+		background: rgb(161, 177, 202);
 		color: aliceblue;
 	}
