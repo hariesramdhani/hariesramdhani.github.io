@@ -4,6 +4,7 @@
 	}
 
 		header .profpict {
+			margin-top: 30px;
 			float: right;
 			margin-right: 120px; 
 		}
@@ -39,6 +40,8 @@
 				}
 
 		header .desc {
+			width: 600px;
+			height: 180px;
 			margin-left: 150px;
 			margin-right: 600px;
 			font-family: "Scope One";
@@ -46,6 +49,8 @@
 		}
 
 		header .kicker {
+			width: 600px;
+			height: 10px;
 			margin-left: 150px;
 			margin-right: 600px;
 			font-family: "Source Sans Pro";
