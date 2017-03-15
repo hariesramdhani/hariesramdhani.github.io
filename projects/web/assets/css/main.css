@@ -1952,6 +1952,7 @@
 			button.special:hover,
 			.button.special:hover {
 				background-color: rgb(209, 4, 55);
+				transform: scale(1.1, 1.1);
 			}
 
 			input[type="submit"].special:active,
@@ -3128,6 +3129,10 @@
 		line-height: 1.75;
 		text-align: center;
 	}
+	
+		#banner img:hover {
+			transform: scale(1.05, 1.05);
+		}
 
 		#banner:last-child {
 			margin-bottom: 0;
