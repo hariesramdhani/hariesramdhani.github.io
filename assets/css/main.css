@@ -15,7 +15,7 @@
 		}
 
 		header .profpict:hover{
-			transform: scale(1.05, 1.05)
+			transform: scale(1.05, 1.05);
 		}
 
 
@@ -50,7 +50,7 @@
 			}
 	
 				header .navig a:hover {
-					color: black; 
+					color: black;
 				}
 
 		header .desc {
