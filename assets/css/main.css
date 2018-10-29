@@ -285,8 +285,7 @@ sup {
 .report-tag {
     border-radius: 3px; 
     padding: 1px 7px; 
-    margin: 0 2px 2px 0; 
-    color: #FBFCB3; 
+    margin: 0 2px 2px 0;  
     background-color: #CA6F6F;
     border-bottom: none;
 }
