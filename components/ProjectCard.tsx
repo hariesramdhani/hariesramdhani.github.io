@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Card from "@/components/Card";
 
 interface Projects {
@@ -13,7 +12,6 @@ interface Projects {
 
 export default function ProjectCard() {
     const [projects, setProjects] = useState<Projects[]>([]);
-    const pathname = usePathname();
 
     useEffect(() => {
         fetch('/data/projects.json')

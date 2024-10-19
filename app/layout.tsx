@@ -3,9 +3,7 @@ import { Hubballi } from "@next/font/google";
 import React, { ReactNode } from "react";
 import "./globals.css";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { useState } from "react";
 
 import SocialMediaButton from "../components/SocialMediaButton";
 
@@ -22,14 +20,6 @@ const hubballi = Hubballi({
 });
 
 export default function RootLayout({ children }: RootLayoutProps) {
-    const pathname = usePathname();
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const isHomePage = pathname === "/";
 
     return (
         <html lang="en">
@@ -40,7 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                         src="/img/github_photo.png"
                         width={400}
                         height={419}
-                        alt="Haries' Profile Picture"
+                        alt="Haries&apos; Profile Picture"
                         style={{ borderRadius: "50%" }}
                     />
                     <div className="flex flex-col">
@@ -111,7 +101,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                             .
                             <br />
                             <br />
-                            Currently as part of my PhD, I'm working on the
+                            Currently as part of my PhD, I&apos;m working on the
                             development of robust and scalable computational and
                             statistical methods for differential cell crosstalk
                             analysis, funded by{" "}
