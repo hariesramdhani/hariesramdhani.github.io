@@ -53,7 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                             style={{ fontSize: 24 }}
                             className="leading-7 text-justify"
                         >
-                            I am a first-year PhD Student in Medical Sciences at
+                            I am a second-year PhD Student in Medical Sciences at
                             the Institute of Medical Sciences, University of
                             Aberdeen in Morgan Lab, supervised by{" "}
                             <Link
