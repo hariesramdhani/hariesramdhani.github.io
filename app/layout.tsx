@@ -7,12 +7,11 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 import SocialMediaButton from "../components/SocialMediaButton";
 
-import { links } from '../data/links';
+import { links } from "../data/links";
 
 interface RootLayoutProps {
     children: ReactNode;
 }
-
 
 const hubballi = Hubballi({
     weight: ["400"],
@@ -20,7 +19,6 @@ const hubballi = Hubballi({
 });
 
 export default function RootLayout({ children }: RootLayoutProps) {
-
     return (
         <html lang="en">
             <body className={`${hubballi.className}`}>
@@ -30,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                         src="/img/github_photo.png"
                         width={400}
                         height={419}
-                        alt="Haries&apos; Profile Picture"
+                        alt="Haries' Profile Picture"
                         style={{ borderRadius: "50%" }}
                     />
                     <div className="flex flex-col">
@@ -53,9 +51,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
                             style={{ fontSize: 24 }}
                             className="leading-7 text-justify"
                         >
-                            I am a second-year PhD Student in Medical Sciences at
-                            the Institute of Medical Sciences, University of
-                            Aberdeen in Morgan Lab, supervised by{" "}
+                            I am a second-year PhD Student in Medical Sciences
+                            at the Institute of Medical Sciences, University of
+                            Aberdeen in{" "}
+                            <Link
+                                href="https://www.morganlab.co.uk/"
+                                className="text-indigo-400"
+                            >
+                                Morgan Lab
+                            </Link>
+                            , supervised by{" "}
                             <Link
                                 href="https://www.abdn.ac.uk/people/michael.morgan"
                                 className="text-indigo-400"
@@ -153,7 +158,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     </div>
 
                     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4">
-                    {children}
+                        {children}
                     </div>
                 </div>
                 <div className="max-w-screen-xl w-full flex flex-col items-center gap-x-5 mt-12 mx-auto px-5">
