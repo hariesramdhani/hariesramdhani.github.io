@@ -1,53 +1,74 @@
-"use client";
+'use client';
 import { Hubballi } from "next/font/google";
-import React, { ReactNode } from "react";
+import React from "react";
 import "./globals.css";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
 import SocialMediaButton from "../components/SocialMediaButton";
-
 import { links } from "../data/links";
-
-interface RootLayoutProps {
-    children: ReactNode;
-}
+import { useTab, TabProvider } from "../context/TabContext";
 
 const hubballi = Hubballi({
-    weight: ["400"],
-    subsets: ["latin"],
+  weight: ["400"],
+  subsets: ["latin"],
 });
 
-export default function RootLayout({ children }: RootLayoutProps) {
-    return (
-        <html lang="en">
-            <body className={`${hubballi.className}`}>
-                <GoogleAnalytics gaId="G-B1TRQFQPF3" />
-                <div className="max-w-screen-xl w-full flex lg:flex-row md:flex-row flex-col items-center mx-auto gap-y-10 gap-x-5 mt-12 px-5">
-                    <img
-                        src="/img/github_photo.png"
-                        width={400}
-                        height={419}
-                        alt="Haries' Profile Picture"
-                        style={{ borderRadius: "50%" }}
-                    />
-                    <div className="flex flex-col">
-                        <p style={{ fontSize: 50 }} className="leading-10 mb-4">
-                            Hi! I am{" "}
-                            <span className="text-gray-300">Muhamad</span>{" "}
-                            Haries{" "}
-                            <span className="text-gray-300">Ramdhani</span>
-                        </p>
-                        <div className="flex flex-row gap-x-2 mb-8">
-                            {links.map((link) => (
-                                <SocialMediaButton
-                                    key={link.image_filename}
-                                    url={link.url}
-                                    image_filename={link.image_filename}
-                                />
-                            ))}
-                        </div>
-                        <p
+function NavItems() {
+  const { setActiveTab, activeTab } = useTab();
+  
+  const tabs = [
+    { id: 'projects', label: 'Side Projects' },
+    { id: 'blog', label: 'Blog' },
+    { id: 'research', label: 'Research' },
+    { id: 'presentation', label: 'Presentation' },
+    { id: 'teaching', label: 'Teaching' },
+  ];
+
+  return (
+    <div className="flex flex-wrap gap-x-8">
+      {tabs.map((tab) => (
+        <button
+          key={tab.id}
+          onClick={() => setActiveTab(tab.id)}
+          className={`mb-5 px-2 rounded-lg ${activeTab === tab.id ? 'bg-gray-200' : 'text-gray-400'}`}
+          style={{ fontSize: 24 }}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className={`${hubballi.className}`}>
+        <GoogleAnalytics gaId="G-B1TRQFQPF3" />
+        <TabProvider>
+          <div className="max-w-screen-xl w-full flex lg:flex-row md:flex-row flex-col items-center mx-auto gap-y-10 gap-x-5 mt-12 px-5">
+            <img
+              src="/img/github_photo.png"
+              width={400}
+              height={419}
+              alt="Haries' Profile Picture"
+              style={{ borderRadius: "50%" }}
+            />
+            <div className="flex flex-col">
+              <p style={{ fontSize: 50 }} className="leading-10 mb-4">
+                Hi! I am <span className="text-gray-300">Muhamad</span> Haries{" "}
+                <span className="text-gray-300">Ramdhani</span>
+              </p>
+              <div className="flex flex-row gap-x-2 mb-8">
+                {links.map((link) => (
+                  <SocialMediaButton
+                    key={link.image_filename}
+                    url={link.url}
+                    image_filename={link.image_filename}
+                  />
+                ))}
+              </div>
+              <p
                             style={{ fontSize: 24 }}
                             className="leading-7 text-justify"
                         >
@@ -119,52 +140,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
                             </Link>{" "}
                             through the IMS studentship.
                         </p>
-                    </div>
-                </div>
-                <div className="max-w-screen-xl w-full flex flex-col items-start gap-x-5 mt-12 mx-auto px-5">
-                    <div className="flex flex-wrap gap-x-8">
-                        <Link href="/">
-                            <h1
-                                style={{ fontSize: 24 }}
-                                className="mb-5 px-2 bg-gray-200 rounded-lg"
-                            >
-                                Side Projects
-                            </h1>
-                        </Link>
-                        <h1
-                            style={{ fontSize: 24 }}
-                            className="mb-5 text-gray-400"
-                        >
-                            Blog
-                        </h1>
-                        <h1
-                            style={{ fontSize: 24 }}
-                            className="mb-5 text-gray-400"
-                        >
-                            Research
-                        </h1>
-                        <h1
-                            style={{ fontSize: 24 }}
-                            className="mb-5 text-gray-400"
-                        >
-                            Presentation
-                        </h1>
-                        <h1
-                            style={{ fontSize: 24 }}
-                            className="mb-5 text-gray-400"
-                        >
-                            Teaching
-                        </h1>
-                    </div>
-
-                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4">
-                        {children}
-                    </div>
-                </div>
-                <div className="max-w-screen-xl w-full flex flex-col items-center gap-x-5 mt-12 mx-auto px-5">
-                    <p>Haries Ramdhani © 2025.</p>
-                </div>
-            </body>
-        </html>
-    );
+            </div>
+          </div>
+          <div className="max-w-screen-xl w-full flex flex-col items-start gap-x-5 mt-12 mx-auto px-5">
+            <NavItems />
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4">
+              {children}
+            </div>
+          </div>
+          <div className="max-w-screen-xl w-full flex flex-col items-center gap-x-5 mt-12 mx-auto px-5">
+            <p>Haries Ramdhani © 2025.</p>
+          </div>
+        </TabProvider>
+      </body>
+    </html>
+  );
 }
