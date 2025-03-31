@@ -72,7 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                                 href="https://www.abdn.ac.uk/ims/profiles/c.debari"
                                 className="text-indigo-400"
                             >
-                                Prof. Casimo de Bari
+                                Prof. Cosimo de Bari
                             </Link>
                             . My research interests are in bioinformatics
                             software and algorithm development, also the
@@ -162,7 +162,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     </div>
                 </div>
                 <div className="max-w-screen-xl w-full flex flex-col items-center gap-x-5 mt-12 mx-auto px-5">
-                    <p>Haries Ramdhani © 2024.</p>
+                    <p>Haries Ramdhani © 2025.</p>
                 </div>
             </body>
         </html>
