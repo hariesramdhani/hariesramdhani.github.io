@@ -18,18 +18,26 @@ function NavItems() {
   
   const tabs = [
     { id: 'projects', label: 'Side Projects' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'research', label: 'Research' },
-    { id: 'presentation', label: 'Presentation' },
-    { id: 'teaching', label: 'Teaching' },
+    { id: 'blog', label: 'Blog', externalUrl: 'https://hariesramdhani.github.io/writing' },
+    // { id: 'research', label: 'Research' },
+    // { id: 'presentation', label: 'Presentation' },
+    // { id: 'teaching', label: 'Teaching' },
   ];
+
+  const handleTabClick = (tab: { id: string; externalUrl?: string }) => {
+    if (tab.externalUrl) {
+      window.location.href = tab.externalUrl;
+    } else {
+      setActiveTab(tab.id);
+    }
+  };
 
   return (
     <div className="flex flex-wrap gap-x-8">
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          onClick={() => setActiveTab(tab.id)}
+          onClick={() => handleTabClick(tab)}
           className={`mb-5 px-2 rounded-lg ${activeTab === tab.id ? 'bg-gray-200' : 'text-gray-400'}`}
           style={{ fontSize: 24 }}
         >
