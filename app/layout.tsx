@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
             <div className="flex flex-col">
               <p style={{ fontSize: 50 }} className="leading-10 mb-4">
-                Hi! I am <span className="text-gray-300">Muhamad</span> Haries{" "}
+                Hi! I am <span className="text-gray-300">M.</span> Haries{" "}
                 <span className="text-gray-300">Ramdhani</span>
               </p>
               <div className="flex flex-row gap-x-2 mb-8">
