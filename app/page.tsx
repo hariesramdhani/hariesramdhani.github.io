@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/ProjectCard";
+import GenericCard from "@/components/GenericCard";
 
 export const metadata = {
   title: "Haries Ramdhani",
@@ -13,7 +13,7 @@ export const metadata = {
 export default function Home() {
   return (
       <>
-          <ProjectCard />
+          <GenericCard />
       </>
   );
 }
